@@ -3,6 +3,7 @@ require 'formula'
 class MuttPatched < Formula
   homepage 'http://www.mutt.org/'
   url 'ftp://ftp.mutt.org/mutt/devel/mutt-1.5.22.tar.gz'
+  mirror 'https://bitbucket.org/mutt/mutt/downloads/mutt-1.5.22.tar.gz'
   sha1 '728a114cb3a44df373dbf1292fc34dd8321057dc'
 
   head do
@@ -16,6 +17,17 @@ class MuttPatched < Formula
     depends_on :automake
   end
 
+  unless Tab.for_name('signing-party').used_options.include? 'with-rename-pgpring'
+    conflicts_with 'signing-party',
+      :because => 'mutt installs a private copy of pgpring'
+  end
+
+  conflicts_with 'tin',
+    :because => 'both install mmdf.5 and mbox.5 man pages'
+
+  conflicts_with 'mutt',
+    :because => 'both install mutt binary'
+
   option "with-debug", "Build with debug option enabled"
   option "with-trash-patch", "Apply trash folder patch"
   option "with-slang", "Build against slang instead of ncurses"
@@ -23,6 +35,7 @@ class MuttPatched < Formula
   option "with-pgp-verbose-mime-patch", "Apply PGP verbose mime patch"
   option "with-pgp-multiple-crypt-hook-patch", "Apply PGP multiple-crypti-hook patch"
   option "with-confirm-attachment-patch", "Apply confirm attachment patch"
+  option "with-xlabel-patch", "Apply X-Label header editing patch"
 
   depends_on 'tokyo-cabinet'
   depends_on 's-lang' => :optional
@@ -41,6 +54,7 @@ class MuttPatched < Formula
       ['with-pgp-combined-crypt-hook-patch',
           'http://localhost.lu/mutt/patches/patch-1.5.22.sc.crypt-combined.1'],
       ['with-confirm-attachment-patch', 'https://gist.github.com/tlvince/5741641/raw/c926ca307dc97727c2bd88a84dcb0d7ac3bb4bf5/mutt-attach.patch'],
+      ['with-xlabel-patch', 'https://github.com/dpwright/mutt/commit/6298aaade5e289bb1f0855f33a1a4f4eb87a2f48.patch'],
     ]
 
     p = []
