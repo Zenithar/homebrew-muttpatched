@@ -36,6 +36,7 @@ class MuttPatched < Formula
   option "with-pgp-multiple-crypt-hook-patch", "Apply PGP multiple-crypti-hook patch"
   option "with-confirm-attachment-patch", "Apply confirm attachment patch"
   option "with-xlabel-patch", "Apply X-Label header editing patch"
+  option "with-date-conditional-patch", "Apply conditional date patch"
 
   depends_on 'tokyo-cabinet'
   depends_on 's-lang' => :optional
@@ -55,6 +56,7 @@ class MuttPatched < Formula
           'http://localhost.lu/mutt/patches/patch-1.5.22.sc.crypt-combined.1'],
       ['with-confirm-attachment-patch', 'https://gist.github.com/tlvince/5741641/raw/c926ca307dc97727c2bd88a84dcb0d7ac3bb4bf5/mutt-attach.patch'],
       ['with-xlabel-patch', 'https://github.com/dpwright/mutt/commit/6298aaade5e289bb1f0855f33a1a4f4eb87a2f48.patch'],
+      ['with-date-conditional-patch','http://www.familie-steinel.de/upload/patch-date-conditional'],
     ]
 
     p = []
