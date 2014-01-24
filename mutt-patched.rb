@@ -28,12 +28,17 @@ class MuttPatched < Formula
   conflicts_with 'mutt',
     :because => 'both install mutt binary'
 
+  # Mutt options
   option "with-debug", "Build with debug option enabled"
-  option "with-trash-patch", "Apply trash folder patch"
   option "with-slang", "Build against slang instead of ncurses"
+  
+  # Patches
+  option "with-sidebar-patch", "Apply sidebar folder patch"
+  option "with-trash-patch", "Apply trash folder patch"
   option "with-ignore-thread-patch", "Apply ignore-thread patch"
   option "with-pgp-verbose-mime-patch", "Apply PGP verbose mime patch"
-  option "with-pgp-multiple-crypt-hook-patch", "Apply PGP multiple-crypti-hook patch"
+  option "with-pgp-multiple-crypt-hook-patch", "Apply PGP multiple-crypt-hook patch"
+  option "with-pgp-combined-crypt-hook-patch", "Apply PGP combined-crypt-hook patch"
   option "with-confirm-attachment-patch", "Apply confirm attachment patch"
   option "with-xlabel-patch", "Apply X-Label header editing patch"
 
