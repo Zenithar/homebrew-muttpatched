@@ -6,6 +6,7 @@ A [homebrew](http://brew.sh) [tap](https://github.com/Homebrew/homebrew/wiki/bre
   * `--with-sidebar-patch` [Sidebar patch](https://github.com/nedos/mutt-sidebar-patch): Adds a sidebar with folder list.
   * `--with-xlabel-patch` [X-Label patch](https://github.com/gi1242/mutt): Adds an `edit-label` function, which allows for a direct editing of the `X-Label` header.
   * `--with-trash-patch` Adds reasonable support for a trash folder (`delete-message` function moves the message to a designated folder).
+  * `--with-date-conditional-patch` Formating dates in the index will vary depending on the message age [link](http://www.schrab.com/aaron/mutt/).
   * `--with-ignore-thread-patch` Permanently ignore threads.
   * `--with-confirm-attachment-patch` Abort composing messages with no attachment containing given keywords.
   * `--with-pgp-confirm-crypt-hook-patch` Allows for skipping the "Use keyID" prompt.
