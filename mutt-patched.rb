@@ -2,9 +2,9 @@ require 'formula'
 
 class MuttPatched < Formula
   homepage 'http://www.mutt.org/'
-  url 'ftp://ftp.mutt.org/mutt/devel/mutt-1.5.22.tar.gz'
-  mirror 'https://bitbucket.org/mutt/mutt/downloads/mutt-1.5.22.tar.gz'
-  sha1 '728a114cb3a44df373dbf1292fc34dd8321057dc'
+  url 'ftp://ftp.mutt.org/mutt/devel/mutt-1.5.23.tar.gz'
+  mirror 'https://bitbucket.org/mutt/mutt/downloads/mutt-1.5.23.tar.gz'
+  sha1 '8ac821d8b1e25504a31bf5fda9c08d93a4acc862'
 
   head do
     url 'http://dev.mutt.org/hg/mutt#default', :using => :hg
@@ -30,8 +30,8 @@ class MuttPatched < Formula
 
   # Mutt options
   option "with-debug", "Build with debug option enabled"
-  option "with-slang", "Build against slang instead of ncurses"
-  
+  option "with-s-lang", "Build against slang instead of ncurses"
+
   # Patches
   option "with-sidebar-patch", "Apply sidebar folder patch"
   option "with-trash-patch", "Apply trash folder patch"
@@ -49,7 +49,8 @@ class MuttPatched < Formula
   def patches
     urls = [
       ['with-sidebar-patch', 'https://raw.github.com/nedos/mutt-sidebar-patch/master/mutt-sidebar.patch'],
-      ['with-trash-patch', 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.4/features/trash-folder'],
+      #['with-trash-patch', 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.4/features/trash-folder'],
+      ['with-trash-patch', 'ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/mutt/trashfolder-1.5.22.diff0.gz'],
       # original source for this went missing, patch sourced from Arch at
       # https://aur.archlinux.org/packages/mutt-ignore-thread/
       ['with-ignore-thread-patch', 'https://gist.github.com/mistydemeo/5522742/raw/1439cc157ab673dc8061784829eea267cd736624/ignore-thread-1.5.21.patch'],
@@ -60,7 +61,7 @@ class MuttPatched < Formula
       ['with-pgp-combined-crypt-hook-patch',
           'http://localhost.lu/mutt/patches/patch-1.5.22.sc.crypt-combined.1'],
       ['with-confirm-attachment-patch', 'https://gist.github.com/tlvince/5741641/raw/c926ca307dc97727c2bd88a84dcb0d7ac3bb4bf5/mutt-attach.patch'],
-      ['with-xlabel-patch', 'https://github.com/dpwright/mutt/commit/6298aaade5e289bb1f0855f33a1a4f4eb87a2f48.patch'],
+      ['with-xlabel-patch', 'https://raw.githubusercontent.com/johndoe75/homebrew-mutt/master/patches/patch-1.5.23.dgc.xlabel_ext.5'],
       ['with-date-conditional-patch','http://www.familie-steinel.de/upload/patch-date-conditional'],
     ]
 
