@@ -21,3 +21,14 @@ A non-exhaustive and not very current list of mutt patches is [here](http://dev.
 
   1. Tap the tap: `brew tap flabbergast/muttpatched`
   2. Brew mutt: `brew install mutt-patched --with-whatever-patch`
+
+## More Formulas
+
+Since I don't really want to maintain an extra repository for every
+small formula I need, I'm including them in this tap. At the moment,
+there's only
+
+  *  [passwdqc](http://www.openwall.com/passwdqc/) ignoring the pam
+     module, I use it to generate random, long passphrases that are not
+     too difficult to remember. E.g. 'lunch!duel$audio'.
+
